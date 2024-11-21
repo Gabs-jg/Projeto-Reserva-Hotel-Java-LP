@@ -45,12 +45,5 @@ public class Main {
             }
         } while (opcao != 0);
 
-        /*criar menu com opções:
-        0 - Sair
-        1 - Criar reserva
-        2 - Alterar uma reserva informando o id da reserva para que o quarto se torne ocupado
-        3 - Imprimir uma reserva informando o nome do cliente
-        4 - Imprimir todas as reservas
-         */
         }
     }
