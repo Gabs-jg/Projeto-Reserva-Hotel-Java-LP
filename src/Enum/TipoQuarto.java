@@ -1,3 +1,5 @@
+package Enum;
+
 public enum TipoQuarto {
     LUXO("Luxo", 300),
     STANDARD("Standard", 180);

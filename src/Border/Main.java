@@ -1,3 +1,7 @@
+package Border;
+
+import Controller.Controle;
+
 import java.util.Scanner;
 
 public class Main {

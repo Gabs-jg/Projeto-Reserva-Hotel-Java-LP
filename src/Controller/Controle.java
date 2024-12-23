@@ -1,3 +1,7 @@
+package Controller;
+
+import Entities.Reserva;
+
 public class Controle {
     private Reserva reservas[] = new Reserva[5];
 
