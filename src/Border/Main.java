@@ -12,42 +12,26 @@ public class Main {
         int opcao;
         do {
 
-            System.out.println("Digite a opção que deseja:\n" +
-                    "0 - Sair\n" +
-                    "1 - Criar reserva\n" +
-                    "2 - Alterar uma reserva.\n" +
-                    "3 - Imprimir uma reserva.\n" +
-                    "4 - Imprimir todas as reservas.");
+            System.out.println("""
+                    Digite a opção que deseja:
+                    0-Sair.\s
+                    1-Criar reserva.\s
+                    2-Cadastrar quarto.\s
+                    3-Cadastrar cliente.\s
+                    4-Imprimir todas as reservas.\s
+                    5-Imprimir uma reserva informando o nome do cliente.\s
+                    6-Imprimir clientes cadastrados.\s
+                     7-Imprimir quartos cadastrados.\s
+                    8- Alterar uma reserva informando o id da reserva para que o quarto se torne ocupado.\s
+                     9-Buscar e imprimir reservas pelo número do quarto.\s
+                    10-Imprimir todos os quartos não ocupados.\s
+                     11-Imprimir reservas de um período.""");
 
 
             opcao = sc.nextInt();
+3
 
-
-            switch (opcao) {
-                case 1:
-                    hotel.criarReserva();
-                    break;
-                case 2:
-                    System.out.println("Digite o ID da reserva:");
-                    int idReserva = sc.nextInt();
-                    hotel.ocuparQuartos(idReserva);
-                    break;
-                case 3:
-                    System.out.println("Digite o nome do cliente:");
-                    String nomeDoCliente = sc.nextLine();
-                    hotel.imprimirReservaNome(nomeDoCliente);
-                    break;
-                case 4:
-                    hotel.imprimirTodos();
-                    break;
-                case 0:
-                    System.out.println("Encerrando o programa.");
-                    break;
-                default:
-                    System.out.println("Opção inválida! Por favor, tente novamente!");
-                    break;
-            }
         } while (opcao != 0);
 
-        }
     }
+}
