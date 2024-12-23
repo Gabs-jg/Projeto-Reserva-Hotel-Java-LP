@@ -21,15 +21,15 @@ public class Main {
                     4-Imprimir todas as reservas.\s
                     5-Imprimir uma reserva informando o nome do cliente.\s
                     6-Imprimir clientes cadastrados.\s
-                     7-Imprimir quartos cadastrados.\s
-                    8- Alterar uma reserva informando o id da reserva para que o quarto se torne ocupado.\s
-                     9-Buscar e imprimir reservas pelo número do quarto.\s
+                    7-Imprimir quartos cadastrados.\s
+                    8-Alterar uma reserva informando o id da reserva para que o quarto se torne ocupado.\s
+                    9-Buscar e imprimir reservas pelo número do quarto.\s
                     10-Imprimir todos os quartos não ocupados.\s
-                     11-Imprimir reservas de um período.""");
+                    11-Imprimir reservas de um período.""");
 
 
             opcao = sc.nextInt();
-3
+
 
         } while (opcao != 0);
 
