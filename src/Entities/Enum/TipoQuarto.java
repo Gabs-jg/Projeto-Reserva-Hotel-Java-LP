@@ -1,4 +1,4 @@
-package Enum;
+package Entities.Enum;
 
 public enum TipoQuarto {
     LUXO("Luxo", 300),
@@ -12,11 +12,14 @@ public enum TipoQuarto {
         this.valorDiaria = valorDiaria;
     }
 
+    public double getValorDiaria() {
+        return valorDiaria;
+    }
+
     public String toString() {
-        return "TipoQuarto{" +
-                "tipoQuarto='" + tipoQuarto + '\'' +
-                ", valorDiaria=" + valorDiaria +
-                '}';
+        return  "tipoQuarto = '" + tipoQuarto + '\'' +
+                ", valorDiaria = " + valorDiaria
+                ;
     }
 
 

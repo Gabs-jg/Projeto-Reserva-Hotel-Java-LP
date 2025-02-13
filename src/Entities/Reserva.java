@@ -1,22 +1,36 @@
 package Entities;
 
-import java.util.Date;
+import Entities.Enum.Status;
+import Entities.Enum.TipoQuarto;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
 
 public class Reserva {
     private static int geradorId;
     private int id;
-    private Date dataInicio;
-    private Date dataFim;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
     private Quarto quarto;
     private double valorTotal;
     private Cliente cliente;
+    private Status status;
 
-    public Reserva(Cliente cliente, Date dtaFim, Date dataIniacio, int clienteId, Quarto quarto) {
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public Reserva(Cliente cliente, LocalDate dataInicio, LocalDate dataFim, Quarto quarto) {
         this.cliente = cliente;
         this.dataFim = dataFim;
         this.dataInicio = dataInicio;
         this.id = geradorId++;
         this.quarto = quarto;
+    }
+
+    public double calcularValorTotalReserva() {
+        long dias = ChronoUnit.DAYS.between(dataInicio, dataFim) + 1;
+        return dias * quarto.getValorDiaria();
     }
 
     public Cliente getCliente() {
@@ -27,19 +41,19 @@ public class Reserva {
         this.cliente = cliente;
     }
 
-    public Date getDataFim() {
+    public LocalDate getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(Date dataFim) {
+    public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
     }
 
-    public Date getDataInicio() {
+    public LocalDate getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
 
@@ -75,16 +89,19 @@ public class Reserva {
         this.valorTotal = valorTotal;
     }
 
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "Reserva{" +
-                "cliente=" + cliente +
+        return "Reserva: " + cliente +
                 ", id=" + id +
-                ", dataInicio=" + dataInicio +
-                ", dataFim=" + dataFim +
-                ", quarto=" + quarto +
-                ", valorTotal=" + valorTotal +
-                '}';
+                ", dataInicio =" + dataInicio.format(fmt) +
+                ", dataFim =" + dataFim.format(fmt) +
+                ", quarto =" + quarto.getNumero() +
+                ", valorTotal =" + calcularValorTotalReserva() +
+                "\n";
     }
 }
 
